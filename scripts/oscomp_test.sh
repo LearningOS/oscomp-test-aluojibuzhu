@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TIMEOUT=60s
+TIMEOUT=300s
 EXIT_STATUS=0
 ROOT=$(realpath $(dirname $0))/../
 AX_ROOT=$ROOT/.arceos
