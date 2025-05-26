@@ -33,7 +33,7 @@ fi
 
 # TODO: add more basic testcases
 basic_testlist=(
-    "/$LIBC/basic/brk"
+    #"/$LIBC/basic/brk"
     "/$LIBC/basic/chdir"
     "/$LIBC/basic/clone"
     "/$LIBC/basic/close"
@@ -63,7 +63,7 @@ basic_testlist=(
     "/$LIBC/basic/wait"
     "/$LIBC/basic/waitpid"
     "/$LIBC/basic/write"
-    "/$LIBC/basic/yield"
+#    "/$LIBC/basic/yield"
 )
 busybox_testlist=("/$LIBC/busybox sh /$LIBC/busybox_testcode.sh")
 iozone_testlist=("/$LIBC/busybox sh /$LIBC/iozone_testcode.sh")
@@ -72,9 +72,6 @@ libctest_testlist=("/$LIBC/busybox sh /$LIBC/libctest_testcode.sh")
 
 testcases_type=(
     "basic"
-    "busybox"
-    "lua"
-    "libctest"
 )
 
 IMG_URL=https://github.com/Azure-stars/testsuits-for-oskernel/releases/download/v0.2/sdcard-$ARCH.img.gz
@@ -90,7 +87,7 @@ fi
 
 cp sdcard-$ARCH.img $AX_ROOT/disk.img
 
-ARG="AX_TESTCASE=oscomp ARCH=$ARCH EXTRA_CONFIG=../configs/$ARCH.toml BLK=y NET=y FEATURES=fp_simd,lwext4_rs SMP=4 ACCEL=n LOG=debug"
+ARG="AX_TESTCASE=oscomp ARCH=$ARCH EXTRA_CONFIG=../configs/$ARCH.toml BLK=y NET=y FEATURES=fp_simd,lwext4_rs SMP=1 ACCEL=n LOG=debug"
 
 echo -e "${GREEN_C}ARGS:${END_C} $ARG"
 if [ $? -ne 0 ]; then

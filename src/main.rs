@@ -7,6 +7,8 @@ extern crate axlog;
 extern crate alloc;
 extern crate axruntime;
 
+use alloc::{format, vec};
+
 mod entry;
 mod mm;
 mod syscall;
@@ -18,10 +20,11 @@ fn main() {
 
     let testcases = option_env!("AX_TESTCASES_LIST")
         .unwrap_or_else(|| "Please specify the testcases list by making user_apps")
-        .split(',')
-        .filter(|&x| !x.is_empty());
+        .replace("\\,", "\n");
 
-    for testcase in testcases {
+    let envs = vec![format!("ARCH={}", option_env!("ARCH").unwrap_or("unknown"))];
+
+    for testcase in testcases.split(',') {
         let Some(args) = shlex::split(testcase) else {
             error!("Failed to parse testcase: {:?}", testcase);
             continue;
@@ -30,7 +33,7 @@ fn main() {
             continue;
         }
         info!("Running user task: {:?}", args);
-        let exit_code = entry::run_user_app(&args, &[]);
+        let exit_code = entry::run_user_app(&args, &envs);
         info!("User task {:?} exited with code: {:?}", args, exit_code);
     }
 }
