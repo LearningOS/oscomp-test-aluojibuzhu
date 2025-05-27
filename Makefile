@@ -1,7 +1,7 @@
 AX_ROOT ?= $(PWD)/.arceos
 AX_TESTCASE ?= nimbos
 ARCH ?= x86_64
-LOG ?= trace
+LOG ?= info
 AX_TESTCASES_LIST=$(shell cat ./apps/$(AX_TESTCASE)/testcase_list | tr '\n' ',')
 FEATURES ?= fp_simd
 

@@ -26,7 +26,7 @@ endef
 
 oscomp_run: defconfig
 	$(call load_img)
-	$(MAKE) AX_TESTCASE=oscomp BLK=y NET=y FEATURES=fp_simd,lwext4_rs LOG=$(LOG) run
+	$(MAKE) AX_TESTCASE=oscomp BLK=y NET=y SMP=1 FEATURES=fp_simd,lwext4_rs LOG=$(LOG) run
 
 TIMEOUT ?= 30m
 
