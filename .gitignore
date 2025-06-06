@@ -1,7 +1,10 @@
 /.vscode
 /.cargo
 /.idea
+/.testsuits-for-oskernel
 /.github
+/mnt
+/testsuits-for-oskernel
 .DS_Store
 *.elf
 *.bin
