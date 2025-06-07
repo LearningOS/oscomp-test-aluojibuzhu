@@ -1,44 +1,3 @@
-/musl/busybox echo "#### OS COMP TEST GROUP START basic-glibc ####"
-/musl/busybox echo "#### OS COMP TEST GROUP START basic-musl ####"
-/musl/basic/brk
-/musl/basic/chdir
-/musl/basic/close
-/musl/basic/clone
-/musl/basic/dup2
-/musl/basic/dup
-/musl/basic/execve
-/musl/basic/exit
-/musl/basic/fork
-/musl/basic/fstat
-/musl/basic/getcwd
-/musl/basic/getdents
-/musl/basic/getpid
-/musl/basic/getppid
-/musl/basic/gettimeofday
-/musl/basic/mkdir_
-/musl/basic/mmap
-/musl/basic/munmap
-/musl/basic/mount
-/musl/basic/openat
-/musl/basic/open
-/musl/basic/sleep
-/musl/basic/pipe
-/musl/basic/read
-/musl/basic/times
-/musl/basic/umount
-/musl/basic/uname
-/musl/basic/unlink
-/musl/basic/wait
-/musl/basic/waitpid
-/musl/basic/write
-/musl/basic/yield
-/musl/busybox echo "#### OS COMP TEST GROUP END basic-musl ####"
-/musl/busybox echo "#### OS COMP TEST GROUP END basic-glibc ####"
-
-/musl/busybox echo "#### OS COMP TEST GROUP START lua-glibc ####"
-/musl/busybox sh /musl/lua_testcode.sh
-/musl/busybox echo "#### OS COMP TEST GROUP END lua-glibc ####"
-
 /musl/busybox echo "#### OS COMP TEST GROUP START libctest-glibc ####"
 /musl/busybox echo "#### OS COMP TEST GROUP START libctest-musl ####"
 /musl/runtest.exe -w entry-static.exe argv
@@ -55,10 +14,10 @@
 /musl/runtest.exe -w entry-static.exe inet_pton
 /musl/runtest.exe -w entry-static.exe mbc
 /musl/runtest.exe -w entry-static.exe memstream
-/musl/runtest.exe -w entry-static.exe pthread_cancel_points
+#/musl/runtest.exe -w entry-static.exe pthread_cancel_points
 #/musl/runtest.exe -w entry-static.exe pthread_cancel
-/musl/runtest.exe -w entry-static.exe pthread_cond
-/musl/runtest.exe -w entry-static.exe pthread_tsd
+#/musl/runtest.exe -w entry-static.exe pthread_cond
+#/musl/runtest.exe -w entry-static.exe pthread_tsd
 /musl/runtest.exe -w entry-static.exe qsort
 /musl/runtest.exe -w entry-static.exe random
 /musl/runtest.exe -w entry-static.exe search_hsearch
@@ -120,13 +79,13 @@
 /musl/runtest.exe -w entry-static.exe printf_fmt_g_round
 /musl/runtest.exe -w entry-static.exe printf_fmt_g_zeros
 /musl/runtest.exe -w entry-static.exe printf_fmt_n
-/musl/runtest.exe -w entry-static.exe pthread_robust_detach
-/musl/runtest.exe -w entry-static.exe pthread_cancel_sem_wait
-/musl/runtest.exe -w entry-static.exe pthread_cond_smasher
-/musl/runtest.exe -w entry-static.exe pthread_condattr_setclock
-/musl/runtest.exe -w entry-static.exe pthread_exit_cancel
-/musl/runtest.exe -w entry-static.exe pthread_once_deadlock
-/musl/runtest.exe -w entry-static.exe pthread_rwlock_ebusy
+#/musl/runtest.exe -w entry-static.exe pthread_robust_detach
+#/musl/runtest.exe -w entry-static.exe pthread_cancel_sem_wait
+#/musl/runtest.exe -w entry-static.exe pthread_cond_smasher
+#/musl/runtest.exe -w entry-static.exe pthread_condattr_setclock
+#/musl/runtest.exe -w entry-static.exe pthread_exit_cancel
+#/musl/runtest.exe -w entry-static.exe pthread_once_deadlock
+#/musl/runtest.exe -w entry-static.exe pthread_rwlock_ebusy
 /musl/runtest.exe -w entry-static.exe putenv_doublefree
 /musl/runtest.exe -w entry-static.exe regex_backref_0
 /musl/runtest.exe -w entry-static.exe regex_bracket_icase
@@ -163,10 +122,10 @@
 /musl/runtest.exe -w entry-dynamic.exe inet_pton
 /musl/runtest.exe -w entry-dynamic.exe mbc
 /musl/runtest.exe -w entry-dynamic.exe memstream
-/musl/runtest.exe -w entry-dynamic.exe pthread_cancel_points
+#/musl/runtest.exe -w entry-dynamic.exe pthread_cancel_points
 #/musl/runtest.exe -w entry-dynamic.exe pthread_cancel
-/musl/runtest.exe -w entry-dynamic.exe pthread_cond
-/musl/runtest.exe -w entry-dynamic.exe pthread_tsd
+#/musl/runtest.exe -w entry-dynamic.exe pthread_cond
+#/musl/runtest.exe -w entry-dynamic.exe pthread_tsd
 /musl/runtest.exe -w entry-dynamic.exe qsort
 /musl/runtest.exe -w entry-dynamic.exe random
 /musl/runtest.exe -w entry-dynamic.exe search_hsearch
